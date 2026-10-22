@@ -2,7 +2,7 @@
 
 > DeepSeek Harness 的非官方社区插件。本目录可作为独立 GitHub 仓库的根目录。
 
-`dsh-plugin-hub` 是独立的 DeepSeek Harness 插件，在输入框旁提供方框加号扩展入口，在设置侧栏提供带搜索的“插件配置”。当前收纳 `dsh-boot-suite` 的“启动动画”“聊天背景”，复用原页面和配置；OAuth、Token 用量继续保留原侧栏入口。其他插件通过显式注册选择加入，不自动吞并所有第三方页面。
+`dsh-plugin-hub` 是独立的 DeepSeek Harness 插件，在输入框旁提供方框加号扩展入口，在设置侧栏提供带搜索的“插件配置”。插件通过显式注册选择加入，不自动吞并所有第三方页面。
 
 视频/GIF 抽帧功能由独立的 `dsh-media-reader` 插件提供，本包提供统一入口与设置收纳基础设施。
 
@@ -116,15 +116,3 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tools\package.ps1
 `DSH_TEST_ASAR` 可指定 DSH 0.2.1-rc.2 的 `resources/app.asar`；不设置时仅尝试当前用户标准安装目录。`DSH_TEST_CHROME` 可指定 Chrome 可执行文件；默认尝试 `C:/Program Files/Google/Chrome/Application/chrome.exe`。
 
 `npm run test:browser` 运行这组可选集成测试。找不到测试环境会明确报错，不会伪装成测试通过。
-
-## 上传 GitHub
-
-在 GitHub 仓库根目录的 Upload files 页面，上传**本目录内的文件和子目录**。README.md、package.json、LICENSE 应直接出现在仓库根目录。
-
-安装 ZIP 与 `.sha256.txt` 作为 Release 附件发布。GitHub 自动生成的 Source code ZIP 是源码快照，不是便携安装包。`private: true` 用于防止误发 npm，不影响把源码公开到 GitHub。
-
-GitHub 网页拖拽不执行 .gitignore 规则。开发测试后若新增了 dist、tools/out、tools/test-work、test/artifacts、test/fixtures 或 .local-deps，网页上传时手动排除这些目录。
-
-### 本插件测试
-
-`npm test` 运行隔离安装/升级/卸载/回滚测试；`npm run test:package` 运行隔离打包测试。这两组测试都不要求安装真实 DSH，不修改个人 profile。`npm run package` 生成便携 ZIP。
