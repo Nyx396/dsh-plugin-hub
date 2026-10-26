@@ -1,6 +1,6 @@
 # DSH 扩展口袋与插件配置
 
-非官方社区插件，包名 dsh-plugin-hub，版本 **1.0.0**。适配 Windows x64 / DeepSeek Harness Desktop **0.2.1-rc.2**。
+非官方社区插件，包名 dsh-plugin-hub，版本 **1.0.1**。适配 Windows x64 / DeepSeek Harness Desktop **0.2.1-rc.3**。
 在输入框旁提供方框加号扩展入口，并在设置侧栏提供可搜索的“插件配置”。扩展通过显式注册加入动作和配置页面。
 
 ## 安装
